@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>NaapBook — measurement vault &amp; stitching-order tracker for tailors</title>
+  <meta name="description" content="Save every customer's measurements once and track each stitching order from taken to delivered, with auto-WhatsApp for trial &amp; pickup and an overdue-flagged delivery board. Built for Indian tailors &amp; boutiques — book a discovery call." />
+  <meta name="keywords" content="tailor software India, measurement vault, stitching order tracker, boutique order management, delivery tracker for tailors, tailoring shop app, WhatsApp order ready" />
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1" />
+  <link rel="canonical" href="https://sreenivas-sadhu-prabhakara.github.io/naapbook-site/" />
+  <meta name="theme-color" content="#7c3aed" />
+  <meta name="author" content="KARYA" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="KARYA" />
+  <meta property="og:locale" content="en_IN" />
+  <meta property="og:title" content="NaapBook — measurement vault &amp; stitching-order tracker for tailors" />
+  <meta property="og:description" content="Save every customer's measurements once and track each stitching order from taken to delivered, with auto-WhatsApp for trial &amp; pickup and an overdue-flagged delivery board. Built for Indian tailors &amp; boutiques — book a discovery call." />
+  <meta property="og:url" content="https://sreenivas-sadhu-prabhakara.github.io/naapbook-site/" />
+  <meta property="og:image" content="https://sreenivas-sadhu-prabhakara.github.io/naapbook-site/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="NaapBook — measurements saved once, every stitching order tracked to delivery, for Indian tailors and boutiques." />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="NaapBook — measurement vault &amp; stitching-order tracker for tailors" />
+  <meta name="twitter:description" content="Save every customer's measurements once and track each stitching order from taken to delivered, with auto-WhatsApp for trial &amp; pickup and an overdue-flagged delivery board. Built for Indian tailors &amp; boutiques — book a discovery call." />
+  <meta name="twitter:image" content="https://sreenivas-sadhu-prabhakara.github.io/naapbook-site/og.png" />
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="apple-touch-icon" href="https://sreenivas-sadhu-prabhakara.github.io/naapbook-site/og.png" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://kaarya-bench.pages.dev/#org",
+        "name": "KARYA",
+        "url": "https://kaarya-bench.pages.dev/",
+        "email": "sreeni.nintendo@gmail.com"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://sreenivas-sadhu-prabhakara.github.io/naapbook-site/#website",
+        "url": "https://sreenivas-sadhu-prabhakara.github.io/naapbook-site/",
+        "name": "NaapBook",
+        "inLanguage": "en-IN",
+        "publisher": { "@id": "https://kaarya-bench.pages.dev/#org" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "NaapBook",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "url": "https://sreenivas-sadhu-prabhakara.github.io/naapbook-site/",
+        "image": "https://sreenivas-sadhu-prabhakara.github.io/naapbook-site/og.png",
+        "description": "A measurement vault and stitching-order delivery tracker for small Indian tailors and boutiques — save each customer's measurements once, take an order with a promised delivery date, move it taken → cutting → stitching → trial → ready → delivered, and auto-WhatsApp the customer when the trial and the finished garment are ready. A pending-delivery board sorts by delivery date with overdue flagged.",
+        "inLanguage": ["en-IN", "hi-IN"],
+        "areaServed": { "@type": "Country", "name": "India" },
+        "audience": { "@type": "BusinessAudience" },
+        "provider": { "@type": "Organization", "name": "KARYA" },
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "INR",
+          "availability": "https://schema.org/InStock",
+          "description": "Subscription — pricing shared on a discovery call"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Do I have to re-measure every customer each visit?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. That's the whole point. You save each customer's measurements once — chest, waist, hip, length, shoulder, sleeve, neck, plus your own notes — per garment type. Every future order pulls from the vault, so you take the next order without lifting a measuring tape."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does it actually send the WhatsApp, or just remind me to?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "When an order reaches trial, a \"trial ready\" message is queued; when it reaches ready, a \"ready for pickup\" message with the balance due is queued — both to your outbox. You send from your own number with a tap, so it always looks like it came from your shop, not a robot. Re-advancing an order never double-sends."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I know which orders are running late?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The delivery board sorts every pending order by its promised delivery date and flags anything overdue in red at the top. The dashboard shows overdue, due-this-week, ready-for-pickup and in-progress counts at a glance — so nothing is missed until an angry phone call."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "I'm not very techy. How long to set up?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "An afternoon. Add your regular customers and their measurements once, then start booking orders. From there the stage machine and the delivery board do the remembering for you — you just advance each order as the work gets done."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What does it cost?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Pricing is worked out on a quick discovery call and billed monthly on subscription. We're keeping public prices off the page while we onboard our first tailoring shops and boutiques."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "KARYA · On the Bench",
+            "item": "https://kaarya-bench.pages.dev/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "NaapBook",
+            "item": "https://sreenivas-sadhu-prabhakara.github.io/naapbook-site/"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="top">
+    <div class="wrap nav__inner">
+      <a class="brand" href="#top" aria-label="NaapBook home">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="28" height="28" role="img" aria-label="NaapBook logo">
+            <rect x="3" y="4" width="26" height="24" rx="3" fill="#7c3aed"/>
+            <rect x="3" y="4" width="7" height="24" rx="3" fill="#5b21b6"/>
+            <path d="M14 10h11M14 16h11M14 22h7" stroke="#F7F5FB" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="brand__name">Naap<span class="brand__book">Book</span></span>
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#problem">The problem</a>
+        <a href="#how">How it works</a>
+        <a href="#features">Features</a>
+        <a href="#preview">Preview</a>
+        <a href="#pricing">Pricing</a>
+      </nav>
+      <a href="mailto:sreeni.nintendo@gmail.com?subject=Discovery%20call%20—%20NaapBook" class="btn btn--sm">Book a discovery call</a>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero__grid">
+        <div class="hero__copy">
+          <p class="eyebrow">Measurements saved · deliveries tracked</p>
+          <h1 class="hero__title" id="hero-title">Every naap saved.<br /><span class="accent-word">Every order on time.</span></h1>
+          <p class="hero__pain">
+            You re-measure customers you stitched for last month, and you find out an
+            order is late only when the phone rings. NaapBook keeps each customer's
+            measurements in a vault and walks every stitching order from taken to
+            delivered — nudging you before a promised date slips.
+          </p>
+          <div class="hero__cta">
+            <a href="#pricing" class="btn btn--lg">See the delivery board &rarr;</a>
+            <a href="#how" class="btn-link">See how it works</a>
+          </div>
+          <p class="hero__note"><span class="dot"></span>For tailors &amp; boutiques with 2–6 staff · subscription · pricing on discovery</p>
+        </div>
+
+        <!-- SIGNATURE WIDGET: live delivery board -->
+        <aside class="register" aria-label="Live delivery board demo">
+          <div class="register__head">
+            <div>
+              <p class="register__label">Delivery board</p>
+              <p class="register__month" id="reg-month">Week of 19 Jul 2026</p>
+            </div>
+            <span class="register__pill">Live</span>
+          </div>
+          <ul class="register__rows" id="reg-rows">
+            <li class="reg-row" data-state="overdue">
+              <span class="reg-row__name">Imran Qureshi <em>· Kurta · trial pending</em></span>
+              <span class="reg-row__amt">Due 17 Jul</span>
+              <span class="reg-row__tag tag--over">2 days overdue</span>
+            </li>
+            <li class="reg-row" data-state="due">
+              <span class="reg-row__name">Farhan Sheikh <em>· 3 Shirts · stitched</em></span>
+              <span class="reg-row__amt">Due today</span>
+              <span class="reg-row__tag tag--due" id="reg-live-tag">Ready for pickup</span>
+            </li>
+            <li class="reg-row" data-state="paid">
+              <span class="reg-row__name">Meera Nair <em>· Blouse · in stitching</em></span>
+              <span class="reg-row__amt">Due 20 Jul</span>
+              <span class="reg-row__tag tag--paid">On track</span>
+            </li>
+          </ul>
+          <div class="register__foot">
+            <div class="regstat">
+              <span class="regstat__label">Ready to hand over</span>
+              <span class="regstat__val regstat__val--in" id="reg-collected">2 orders</span>
+            </div>
+            <div class="regstat">
+              <span class="regstat__label">Overdue</span>
+              <span class="regstat__val regstat__val--out" id="reg-pending">1 order</span>
+            </div>
+          </div>
+          <p class="register__caption" id="reg-caption">Farhan's shirts hit “ready” &rarr; a pickup message queues automatically.</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============ PROBLEM ============ -->
+    <section class="section" id="problem" aria-label="The problem">
+      <div class="wrap">
+        <p class="eyebrow eyebrow--rule">01 · The problem</p>
+        <div class="two-col">
+          <h2 class="section__title">You know the stitching.<br />The remembering is what breaks.</h2>
+          <div class="prose">
+            <p>
+              Run a two-tailor shop or a boutique off Linking Road and nobody handed you an
+              order desk. Your system is a <strong>diary of measurements, a stack of order
+              slips, and a WhatsApp thread</strong> — and each one quietly fails you at the
+              worst moment.
+            </p>
+          </div>
+        </div>
+
+        <div class="pain-grid">
+          <div class="pain">
+            <span class="pain__i" aria-hidden="true">📏</span>
+            <h3>The same customer, measured again</h3>
+            <p>Anjali came in three months ago; her blouse measurements are on a slip you can't find. So you measure her again — and hope the new numbers match the last fit.</p>
+          </div>
+          <div class="pain">
+            <span class="pain__i" aria-hidden="true">📅</span>
+            <h3>You learn it's late from the customer</h3>
+            <p>Twelve orders, twelve promised dates, all in your head. The first sign one slipped is a phone call — “bhaiya, aaj toh ready hona tha na?”</p>
+          </div>
+          <div class="pain">
+            <span class="pain__i" aria-hidden="true">💬</span>
+            <h3>“Trial kab hai?” a dozen times a day</h3>
+            <p>Customers keep calling to ask if the trial or the piece is ready. You stop stitching to check the rack, then call back — for every single order.</p>
+          </div>
+          <div class="pain">
+            <span class="pain__i" aria-hidden="true">💸</span>
+            <h3>The advance-vs-balance is fuzzy</h3>
+            <p>Half took an advance, half didn't, and the balance is a scribble on the slip. At pickup you're doing arithmetic in front of the customer, hoping you're right.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ INSIGHT ============ -->
+    <section class="insight" id="insight" aria-label="The insight">
+      <div class="wrap">
+        <p class="eyebrow eyebrow--light">02 · The insight</p>
+        <blockquote class="insight__quote">
+          A stitching order is just a garment on a <span class="hl">promised date</span> —
+          the same stages every time, from taken to delivered. Yet it's tracked
+          <span class="hl">from memory</span>, one slip at a time.
+        </blockquote>
+        <p class="insight__punch">
+          NaapBook's whole job is to make that lifecycle visible: save the measurements
+          <strong>once</strong>, book each order against a delivery date, and move it
+          <strong>taken → cutting → stitching → trial → ready → delivered</strong> — so the
+          trial and pickup messages send themselves and no promised date can slip past you.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ HOW IT WORKS ============ -->
+    <section class="section" id="how" aria-label="How it works">
+      <div class="wrap">
+        <p class="eyebrow eyebrow--rule">03 · How it works</p>
+        <h2 class="section__title">Measure once. Then just move the order along.</h2>
+
+        <ol class="steps">
+          <li class="step">
+            <span class="step__n">1</span>
+            <div>
+              <h3>Save the measurements once</h3>
+              <p>Add a customer and their numbers per garment — chest, waist, hip, length, shoulder, sleeve, neck, plus notes. The vault keeps them for every future order.</p>
+            </div>
+          </li>
+          <li class="step">
+            <span class="step__n">2</span>
+            <div>
+              <h3>Take the order with a promised date</h3>
+              <p>Garment, quantity, order date, delivery date, trial date, amount and advance. The balance is worked out for you — no measuring, no arithmetic.</p>
+            </div>
+          </li>
+          <li class="step">
+            <span class="step__n">3</span>
+            <div>
+              <h3>Advance it through the stages</h3>
+              <p>Tap to move each order taken → cutting → stitching → trial → ready → delivered. Reaching trial and ready auto-queues the customer's WhatsApp.</p>
+            </div>
+          </li>
+          <li class="step">
+            <span class="step__n">4</span>
+            <div>
+              <h3>Work the delivery board</h3>
+              <p>Every pending order sorted by delivery date, overdue flagged red. Record the balance at pickup, mark it delivered, and it clears off the board.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ FEATURES ============ -->
+    <section class="section section--tint" id="features" aria-label="What's inside">
+      <div class="wrap">
+        <p class="eyebrow eyebrow--rule">04 · What's inside</p>
+        <h2 class="section__title">The whole order desk, in one book.</h2>
+
+        <div class="feat-grid">
+          <article class="feat">
+            <h3>Measurement vault</h3>
+            <p>Each customer's measurements saved once, per garment type, with your fit notes. Take the next order without ever re-measuring.</p>
+          </article>
+          <article class="feat">
+            <h3>Order &amp; promised date</h3>
+            <p>Book garment, quantity, order date, delivery date and trial date in one card. The advance-vs-balance is tracked automatically.</p>
+          </article>
+          <article class="feat">
+            <h3>Six-stage order machine</h3>
+            <p>Taken, cutting, stitching, trial, ready, delivered — one tap forward. The shop floor's real state, not a memory of it.</p>
+          </article>
+          <article class="feat">
+            <h3>Auto-WhatsApp trial &amp; pickup</h3>
+            <p>Hit trial, a “trial ready” message queues; hit ready, a “ready for pickup” with the balance due queues. Never sent twice.</p>
+          </article>
+          <article class="feat">
+            <h3>Overdue-flagged delivery board</h3>
+            <p>Every pending order sorted by promised date, anything late flagged red at the top. You see slippage before the customer does.</p>
+          </article>
+          <article class="feat">
+            <h3>Advance &amp; balance ledger</h3>
+            <p>Record each advance as it comes in; the balance at pickup is always correct. Collected-vs-outstanding at a glance on the dashboard.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRODUCT PREVIEW ============ -->
+    <section class="section" id="preview" aria-label="The dashboard">
+      <div class="wrap">
+        <p class="eyebrow eyebrow--rule">05 · The dashboard</p>
+        <h2 class="section__title">Open it in the morning. See the whole shop floor.</h2>
+
+        <div class="screen" role="img" aria-label="NaapBook dashboard preview showing 1 overdue order, 4 due this week, 2 ready for pickup, and an order board of four customers with their stage and promised delivery date for the week of July 2026.">
+          <!-- browser chrome -->
+          <div class="screen__bar">
+            <span class="screen__dot"></span><span class="screen__dot"></span><span class="screen__dot"></span>
+            <span class="screen__url">app.naapbook.in / Anjali Boutique</span>
+          </div>
+
+          <div class="screen__body">
+            <div class="screen__topline">
+              <div>
+                <p class="screen__hello">Namaste, Priya ji</p>
+                <p class="screen__sub">Anjali Boutique · 12 open orders · Week of 19 Jul 2026</p>
+              </div>
+              <span class="screen__tag">Board &middot; sorted by delivery date</span>
+            </div>
+
+            <!-- KPI cards -->
+            <div class="kpis">
+              <div class="kpi kpi--out">
+                <p class="kpi__label">Overdue</p>
+                <p class="kpi__val">1</p>
+                <div class="kpi__bar kpi__bar--out"><span style="width:20%"></span></div>
+                <p class="kpi__meta">Imran · Kurta · trial pending</p>
+              </div>
+              <div class="kpi kpi--in">
+                <p class="kpi__label">Ready for pickup</p>
+                <p class="kpi__val">2</p>
+                <div class="kpi__bar"><span style="width:40%"></span></div>
+                <p class="kpi__meta">Farhan &amp; Rohit · messages queued</p>
+              </div>
+              <div class="kpi kpi--flat">
+                <p class="kpi__label">Due this week</p>
+                <p class="kpi__val">4</p>
+                <p class="kpi__meta">Sunita, Kavya, Meera &amp; Anjali</p>
+              </div>
+            </div>
+
+            <!-- delivery board table -->
+            <div class="tablecard">
+              <div class="tablecard__head">
+                <p>Delivery board</p>
+                <span class="tablecard__hint">overdue flagged · trial &amp; pickup auto-messaged</span>
+              </div>
+              <div class="tablescroll">
+                <table class="dtable">
+                  <thead>
+                    <tr>
+                      <th>Customer</th><th>Garment</th><th class="num">Trial</th><th class="num">Delivery</th><th>Stage</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Imran Qureshi</td><td>Kurta ×1</td>
+                      <td class="num">11 Jul</td><td class="num">17 Jul</td>
+                      <td><span class="s s--over">2 days overdue · trial</span></td>
+                    </tr>
+                    <tr>
+                      <td>Farhan Sheikh</td><td>Shirt ×3</td>
+                      <td class="num">16 Jul</td><td class="num">19 Jul</td>
+                      <td><span class="s s--paid">Ready · pickup sent</span></td>
+                    </tr>
+                    <tr>
+                      <td>Sunita Gupta</td><td>Salwar Suit ×2</td>
+                      <td class="num">18 Jul</td><td class="num">21 Jul</td>
+                      <td><span class="s s--due">In cutting</span></td>
+                    </tr>
+                    <tr>
+                      <td>Kavya Reddy</td><td>Gown ×1</td>
+                      <td class="num">15 Jul</td><td class="num">22 Jul</td>
+                      <td><span class="s s--due">Trial · message sent</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRICING ============ -->
+    <section class="section section--tint" id="pricing" aria-label="Pricing">
+      <div class="wrap">
+        <p class="eyebrow eyebrow--rule">06 · Pricing</p>
+        <div class="price-wrap">
+          <div class="price-copy">
+            <h2 class="section__title">Simple subscription. However many orders you run.</h2>
+            <p class="prose">
+              If NaapBook saves you <strong>one lost measurement or one missed delivery a
+              month</strong> — the re-stitch, the refund, the customer who never comes back —
+              it's already paid for itself, and you've bought back the hours you spend
+              checking the rack and calling people back.
+            </p>
+            <ul class="price-includes">
+              <li>Unlimited customers &amp; saved measurements</li>
+              <li>Six-stage order machine + auto-WhatsApp</li>
+              <li>Overdue-flagged delivery &amp; stitching boards</li>
+              <li>Advance/balance ledger &amp; shop-floor dashboard</li>
+            </ul>
+          </div>
+
+          <div class="price-card">
+            <p class="price-card__eyebrow">NaapBook</p>
+            <p class="price-card__amt" style="font-size:34px;">Pricing on discovery</p>
+            <p class="price-card__line">Subscription basis</p>
+            <p class="prose" style="color:color-mix(in srgb, var(--paper) 82%, transparent);margin:0 0 22px;">
+              We set pricing on a short discovery call and bill it as a simple monthly
+              subscription — sized to your shop. Early tailoring shops and boutiques get
+              founder terms.
+            </p>
+            <a href="mailto:sreeni.nintendo@gmail.com?subject=Discovery%20call%20—%20NaapBook" class="btn btn--lg btn--block">Book a discovery call</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WHO + FAQ ============ -->
+    <section class="section" id="faq" aria-label="Who it's for and frequently asked questions">
+      <div class="wrap">
+        <p class="eyebrow eyebrow--rule">07 · Who it's for &amp; questions</p>
+        <div class="who-grid">
+          <div class="who">
+            <h2 class="section__title section__title--sm">Built for the neighbourhood tailor, not the factory.</h2>
+            <p class="prose">
+              NaapBook is for the <strong>2–6 person tailoring shop or boutique</strong> — the
+              one running on measurement diaries, order slips and WhatsApp today. Busy enough
+              that measurements get lost and dates get missed; small enough that a
+              factory ERP is overkill and overpriced. If your order desk is paper and memory,
+              this is for you.
+            </p>
+            <div class="who-tags">
+              <span>Local tailoring shops</span>
+              <span>Ladies' &amp; boutique stitching</span>
+              <span>Bespoke &amp; alteration units</span>
+              <span>2–6 staff</span>
+            </div>
+          </div>
+
+          <div class="faq">
+            <details open>
+              <summary>Do I have to re-measure every customer each visit?</summary>
+              <p>No. That's the whole point. You save each customer's measurements once — chest, waist, hip, length, shoulder, sleeve, neck, plus your own notes — per garment type. Every future order pulls from the vault, so you take the next order without lifting a measuring tape.</p>
+            </details>
+            <details>
+              <summary>Does it actually send the WhatsApp, or just remind me to?</summary>
+              <p>When an order reaches trial, a “trial ready” message is queued; when it reaches ready, a “ready for pickup” message with the balance due is queued — both to your outbox. You send from your own number with a tap, so it always looks like it came from your shop, not a robot. Re-advancing an order never double-sends.</p>
+            </details>
+            <details>
+              <summary>How do I know which orders are running late?</summary>
+              <p>The delivery board sorts every pending order by its promised delivery date and flags anything overdue in red at the top. The dashboard shows overdue, due-this-week, ready-for-pickup and in-progress counts at a glance — so nothing is missed until an angry phone call.</p>
+            </details>
+            <details>
+              <summary>I'm not very techy. How long to set up?</summary>
+              <p>An afternoon. Add your regular customers and their measurements once, then start booking orders. From there the stage machine and the delivery board do the remembering for you — you just advance each order as the work gets done.</p>
+            </details>
+            <details>
+              <summary>What does it cost?</summary>
+              <p>Pricing is worked out on a quick discovery call and billed monthly on subscription. We're keeping public prices off the page while we onboard our first tailoring shops and boutiques.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer" aria-label="Site footer">
+    <div class="wrap footer__inner">
+      <div class="footer__brand">
+        <span class="brand">
+          <span class="brand__mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" width="24" height="24" role="img" aria-label="NaapBook logo">
+              <rect x="3" y="4" width="26" height="24" rx="3" fill="#7c3aed"/>
+              <rect x="3" y="4" width="7" height="24" rx="3" fill="#5b21b6"/>
+              <path d="M14 10h11M14 16h11M14 22h7" stroke="#F7F5FB" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span class="brand__name">Naap<span class="brand__book">Book</span></span>
+        </span>
+        <p class="footer__tag">Every naap saved. Every order on time.</p>
+      </div>
+      <div class="footer__meta">
+        <p class="footer__studio">A <strong>KARYA</strong> studio build</p>
+        <a class="footer__mail" href="mailto:sreeni.nintendo@gmail.com">sreeni.nintendo@gmail.com</a>
+        <p class="footer__fine">© 2026 NaapBook · Made in India</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
